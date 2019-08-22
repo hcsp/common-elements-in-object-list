@@ -10,8 +10,7 @@ public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         HashSet<Person> aSet = new HashSet<>(a);
-        HashSet<Person> bSet = new HashSet<>(b);
-        aSet.retainAll(bSet);
+        aSet.retainAll(b);
         return aSet;
     }
 
