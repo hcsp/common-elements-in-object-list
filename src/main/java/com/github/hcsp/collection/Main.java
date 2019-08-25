@@ -2,11 +2,17 @@ package com.github.hcsp.collection;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
-    public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {}
+    public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
+        return a.stream()
+                .filter(userInA -> b.stream().anyMatch(userInB -> userInA.getName().equals(userInB.getName())) )
+                .collect(Collectors.toSet());
+    }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
     public static class Person {
@@ -22,6 +28,30 @@ public class Main {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            Person person = (Person) o;
+            return Objects.equals(name, person.name);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    '}';
         }
     }
 
