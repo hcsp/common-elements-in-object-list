@@ -11,9 +11,8 @@ public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> personSet = new HashSet<>();
-        //a.retainAll(b);
-        for (Person person:a
-             ) {
+        for (Person person : a
+                ) {
             if (b.contains(person)) {
                 personSet.add(person);
             }
@@ -21,7 +20,7 @@ public class Main {
         return personSet;
     }
 
-    // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
+    /**Person类，如果两个Person对象的name相等，则认为这两个对象相等。*/
     public static class Person {
         private String name;
 
@@ -46,8 +45,12 @@ public class Main {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) {return true;}
-            if (o == null || getClass() != o.getClass()) {return false;}
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Person person = (Person) o;
             return Objects.equals(name, person.name);
         }
