@@ -8,7 +8,7 @@ public class Main {
         List<Person> aList = new ArrayList<>(a);
         List<Person> bList = new ArrayList<>(b);
         aList.retainAll(bList);
-        return new HashSet<>(aList);
+        return new HashSet<Person>(aList);
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
@@ -43,7 +43,7 @@ public class Main {
 
         @Override
         public int hashCode() {
-            return this.name.hashCode();
+            return Objects.hash(this.name);
         }
 
     }
