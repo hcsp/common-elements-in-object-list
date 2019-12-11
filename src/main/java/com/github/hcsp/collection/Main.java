@@ -38,7 +38,7 @@ public class Main {
             }
 
             Person objPerson = (Person)obj;
-            return this.name.equals(objPerson);
+            return this.name.equals(objPerson.name);
         }
 
         @Override
