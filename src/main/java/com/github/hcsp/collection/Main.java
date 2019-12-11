@@ -37,7 +37,7 @@ public class Main {
                 return false;
             }
 
-            Person objPerson = (Person)obj;
+            Person objPerson = (Person) obj;
             return this.name.equals(objPerson.name);
         }
 
