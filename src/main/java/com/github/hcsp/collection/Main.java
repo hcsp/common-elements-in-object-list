@@ -28,7 +28,7 @@ public class Main {
                 return false;
             }
             Person person=(Person) u;
-            return Objects.equals(name,person.name);
+            return Objects.equals(name, person.name);
         }
         @Override
         public int hashCode() {
