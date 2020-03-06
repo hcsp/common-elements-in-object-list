@@ -5,8 +5,8 @@ import java.util.*;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> set = new HashSet<>();//保存重复的值
-        HashMap<String, Integer> map = new HashMap<>();//利用map来找出重复元素
+        Set<Person> set = new HashSet<>();
+        HashMap<String, Integer> map = new HashMap<>();
         for (Person pa : a
         ) {
             map.put(pa.getName(), 1);
@@ -45,8 +45,11 @@ public class Main {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Person)) return false;
+            if (this == o) {
+                return true;
+            } else if (!(o instanceof Person)) {
+                return false;
+            }
             Person person = (Person) o;
             return name.equals(person.name);
         }
