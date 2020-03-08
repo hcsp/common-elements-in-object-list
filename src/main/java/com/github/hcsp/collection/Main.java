@@ -10,12 +10,13 @@ public class Main {
         Set<Person> result = new HashSet<>();
         //对a进行遍历，并判断b中是否有a中元素
         for (Person person : list1) {
-            if (b.contains(person)){
+            if (b.contains(person)) {
                 result.add(person);
             }
         }
         return result;
     }
+
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
     public static class Person {
         private String name;
@@ -31,11 +32,15 @@ public class Main {
         public void setName(String name) {
             this.name = name;
         }
-        //重写equal方法
+
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Person)) return false;
+            if (this == o) {
+                return true;
+            }
+            if (!(o instanceof Person)) {
+                return false;
+            }
             Person person = (Person) o;
             return Objects.equals(getName(), person.getName());
         }
