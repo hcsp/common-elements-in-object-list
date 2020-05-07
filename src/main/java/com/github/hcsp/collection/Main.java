@@ -7,11 +7,11 @@ public class Main {
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> res = new HashSet<>();
         Set<String> set = new HashSet<>();
-        for(Person p : a){
+        for (Person p : a) {
             set.add(p.getName());
         }
-        for(Person p : b){
-            if(set.contains(p.getName())){
+        for (Person p : b) {
+            if (set.contains(p.getName())) {
                 res.add(p);
             }
         }
