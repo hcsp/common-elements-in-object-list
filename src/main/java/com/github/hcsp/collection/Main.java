@@ -6,12 +6,8 @@ public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> res = new HashSet<>();
-        Set<String> set = new HashSet<>();
-        for (Person p : a) {
-            set.add(p.getName());
-        }
-        for (Person p : b) {
-            if (set.contains(p.getName())) {
+        for(Person p : a){
+            if(b.contains(p)){
                 res.add(p);
             }
         }
@@ -34,6 +30,18 @@ public class Main {
             this.name = name;
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Person person = (Person) o;
+            return Objects.equals(name, person.name);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
+        }
     }
 
     public static void main(String[] args) {
