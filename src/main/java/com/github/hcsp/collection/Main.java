@@ -8,7 +8,7 @@ public class Main {
         Set hs = new HashSet();
         for(int i = 0; i < a.size(); i++) {
             for(int j = 0; j < b.size(); j++) {
-               if(a.get(i).hashCode() == b.get(j).hashCode()){
+               if(a.get(i).equals(b.get(j))){
                    hs.add(b.get(j));
                }
             }
