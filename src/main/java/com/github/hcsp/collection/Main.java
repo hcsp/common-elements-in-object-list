@@ -9,10 +9,9 @@ import java.util.Set;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> set = new HashSet<>();
-        set.addAll(a);
-        set.containsAll(b);
+        Set<Person> set = new HashSet<>(a);
 
+        set.retainAll(b);
         return set;
     }
 
@@ -26,10 +25,6 @@ public class Main {
 
         public String getName() {
             return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
         }
 
         @Override
@@ -48,6 +43,11 @@ public class Main {
         public int hashCode() {
             return Objects.hash(name);
         }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
     }
 
     public static void main(String[] args) {
