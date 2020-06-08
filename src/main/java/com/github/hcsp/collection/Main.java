@@ -48,5 +48,6 @@ public class Main {
         List<Person> list1 = Arrays.asList(new Person("张学友"), new Person("周杰伦"));
         List<Person> list2 = Arrays.asList(new Person("周润发"), new Person("周杰伦"));
         System.out.println(commonElementsIn(list1, list2));
+
     }
 }
