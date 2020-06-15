@@ -15,7 +15,7 @@ public class Main {
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
-    public static class Person{
+    public static class Person {
         private String name;
 
         public Person(String name) {
