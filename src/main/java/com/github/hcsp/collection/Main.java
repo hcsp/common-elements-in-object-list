@@ -12,11 +12,12 @@ public class Main {
         Set<Person> commonElement = new HashSet<>();
         for (Person person1 : a) {
             for (Person person2 : b) {
-                if(person1.equals(person2)){
+                if (person1.equals(person2)) {
                     commonElement.add(person1);
                 }
             }
         }
+        System.out.println("commonElement" + commonElement);
         return commonElement;
     }
 
