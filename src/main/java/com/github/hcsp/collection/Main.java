@@ -7,9 +7,9 @@ public class Main {
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> commonElements = new HashSet<>();
         for (Person person : a) {
-           if(b.contains(person)) {
-               commonElements.add(person);
-           }
+            if (b.contains(person)) {
+                commonElements.add(person);
+            }
         }
         return commonElements;
     }
