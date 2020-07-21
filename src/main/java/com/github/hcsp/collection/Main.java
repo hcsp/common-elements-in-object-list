@@ -9,10 +9,10 @@ import java.util.Arrays;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> SetA = new HashSet<>(a);
-        Set<Person> SetB = new HashSet<>(b);
-        SetA.retainAll(SetB);
-        return SetA;
+        Set<Person> PeopleA = new HashSet<>(a);
+        Set<Person> PeopleB = new HashSet<>(b);
+        PeopleA.retainAll(PeopleB);
+        return PeopleA;
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
@@ -33,8 +33,12 @@ public class Main {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Person person = (Person) o;
             return Objects.equals(name, person.name);
         }
@@ -42,13 +46,6 @@ public class Main {
         @Override
         public int hashCode() {
             return Objects.hash(name);
-        }
-
-        @Override
-        public String toString() {
-            return "Person{" +
-                    "name='" + name + '\'' +
-                    '}';
         }
 
 
