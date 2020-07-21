@@ -1,21 +1,26 @@
 package com.github.hcsp.collection;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> personA = new HashSet<>(a);
-        Set<Person> personB = new HashSet<>(b);
-
-        personA.retainAll(personB);
-
-        return personA;
-
+        Set<Person> set = new TreeSet<>();
+        for (Person person : a) {
+            for (Person person1 : b) {
+                if (person1.getName().equals(person.getName())) {
+                    set.add(person);
+                }
+            }
+        }
+        return set;
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
-    public static class Person {
+    public static class Person implements Comparable<Person> {
         private String name;
 
         public Person(String name) {
@@ -31,20 +36,11 @@ public class Main {
         }
 
         @Override
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
+        public int compareTo(Person o) {
+            if (this == o) {
+                return 1;
             }
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
-            }
-            Person person = (Person) obj;
-            return Objects.equals(name, person.name);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(name);
+            return -1;
         }
     }
 
