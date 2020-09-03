@@ -1,12 +1,17 @@
 package com.github.hcsp.collection;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
-    public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {}
+    public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
+        Set<Person> A = new HashSet<>(a);
+        Set<Person> B = new HashSet<>(b);
+        A.retainAll(B);
+        return A;
+
+
+    }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
     public static class Person {
@@ -23,7 +28,27 @@ public class Main {
         public void setName(String name) {
             this.name = name;
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof Person) {
+                return this.name.equals(((Person) obj).name);
+            }
+            return false;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+
     }
+
 
     public static void main(String[] args) {
         List<Person> list1 = Arrays.asList(new Person("张学友"), new Person("周杰伦"));
@@ -31,3 +56,6 @@ public class Main {
         System.out.println(commonElementsIn(list1, list2));
     }
 }
+
+
+
