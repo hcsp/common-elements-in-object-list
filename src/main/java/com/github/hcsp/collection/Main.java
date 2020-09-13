@@ -1,6 +1,9 @@
 package com.github.hcsp.collection;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -32,8 +35,7 @@ public class Main {
 
         @Override
         public boolean equals(Object obj) {
-            return (obj != null && obj.getClass() == this.getClass() && ((Person) obj).getName()
-                    .equals(this.getName()));
+            return obj != null && obj.getClass() == this.getClass() && ((Person) obj).getName().equals(this.getName());
         }
 
     }
