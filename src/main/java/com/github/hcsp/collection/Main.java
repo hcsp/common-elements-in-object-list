@@ -1,9 +1,6 @@
 package com.github.hcsp.collection;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
@@ -27,6 +24,18 @@ public class Main {
 
         public void setName(String name) {
             this.name = name;
+        }
+        @Override
+        public boolean equals(Object o){
+            if (o instanceof Person)
+            {
+                return Objects.equals(this.getName(), ((Person) o).getName());
+            }
+            return  false;
+        }
+        @Override
+        public int hashCode(){
+            return Objects.hash(name);
         }
     }
 
