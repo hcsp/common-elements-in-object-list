@@ -5,9 +5,10 @@ import java.util.*;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> p = new HashSet<>(a);
-        p.retainAll(b);
-        return p;
+        Set<Person> result = new HashSet<>(a);
+        result.retainAll(b);
+        return result;
+
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
@@ -25,16 +26,17 @@ public class Main {
         public void setName(String name) {
             this.name = name;
         }
+
         @Override
-        public boolean equals(Object o){
-            if (o instanceof Person)
-            {
+        public boolean equals(Object o) {
+            if (o instanceof Person) {
                 return Objects.equals(this.getName(), ((Person) o).getName());
             }
-            return  false;
+            return false;
         }
+
         @Override
-        public int hashCode(){
+        public int hashCode() {
             return Objects.hash(name);
         }
     }
