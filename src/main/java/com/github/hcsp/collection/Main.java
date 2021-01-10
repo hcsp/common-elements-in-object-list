@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Objects;
 
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
@@ -39,6 +40,12 @@ public class Main {
             }
             Person person = (Person) o;
             return name.equals(person.name);
+        }
+
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
         }
     }
 
