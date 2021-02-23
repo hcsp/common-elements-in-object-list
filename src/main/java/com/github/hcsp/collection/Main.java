@@ -1,5 +1,6 @@
 package com.github.hcsp.collection;
 
+
 import java.util.*;
 
 public class Main {
@@ -28,8 +29,12 @@ public class Main {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
             Person person = (Person) o;
             return Objects.equals(name, person.name);
         }
