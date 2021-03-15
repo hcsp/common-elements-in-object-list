@@ -1,6 +1,9 @@
 package com.github.hcsp.collection;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。git
@@ -11,7 +14,7 @@ public class Main {
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
-    public static class Person{
+    public static class Person {
         private String name;
 
         public Person(String name) {
