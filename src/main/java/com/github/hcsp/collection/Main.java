@@ -11,7 +11,7 @@ public class Main {
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
         Set<Person> set = new HashSet<>();
         for (Person personA : a) {
-            if(b.contains(personA)){
+            if (b.contains(personA)) {
                 set.add(personA);
             }
         }
