@@ -9,12 +9,8 @@ import java.util.Set;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> set = new HashSet<>();
-        for (Person personA : a) {
-            if (b.contains(personA)) {
-                set.add(personA);
-            }
-        }
+        Set<Person> set = new HashSet<>(a);
+        set.retainAll(b);
         return set;
     }
 
