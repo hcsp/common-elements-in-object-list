@@ -13,8 +13,6 @@ public class Main {
         Set<Person> setB = new HashSet<>(b);
         setA.retainAll(setB);
         return setA;
-
-
     }
 
     // Person类，如果两个Person对象的name相等，则认为这两个对象相等。
@@ -45,7 +43,6 @@ public class Main {
         public int hashCode() {
             return Objects.hash(name);
         }
-
     }
 
     public static void main(String[] args) {
