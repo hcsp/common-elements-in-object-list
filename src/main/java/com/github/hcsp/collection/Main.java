@@ -1,5 +1,6 @@
 package com.github.hcsp.collection;
 
+
 import java.util.*;
 
 public class Main {
