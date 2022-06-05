@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
     // 请编写一个方法，获得a和b集合中的公共元素。
     public static Set<Person> commonElementsIn(List<Person> a, List<Person> b) {
-        Set<Person> personSet=new HashSet<>(a);
+        Set<Person> personSet = new HashSet<>(a);
         personSet.retainAll(new HashSet<>(b));
         return personSet;
     }
@@ -33,7 +33,7 @@ public class Main {
 
             Person person = (Person) o;
 
-            return Objects.equals(name,((Person) o).name);
+            return Objects.equals(name, ((Person) o).name);
         }
 
         @Override
